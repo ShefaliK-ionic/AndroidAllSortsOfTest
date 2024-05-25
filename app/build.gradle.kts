@@ -33,7 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
+    testOptions {
+        unitTests {
+            all {
+                it.enabled = true
+            }
+        }
+}}
 
 dependencies {
 
@@ -42,7 +48,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("org.testng:testng:6.9.6")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(
+        "org.junit.jupiter:junit-jupiter-params:5.9.0"
+    )
 }
