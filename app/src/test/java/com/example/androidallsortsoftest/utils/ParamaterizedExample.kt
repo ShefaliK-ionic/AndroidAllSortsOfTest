@@ -15,7 +15,7 @@ class ParamaterizedExample(val input:String, val expexctedValue:Boolean) {
 
         val helper=MyHelper()
         val result=helper.isPalindrome(input)
-       Assert.assertEquals(expexctedValue,result)
+        Assert.assertEquals(expexctedValue,result)
 
     }
 
