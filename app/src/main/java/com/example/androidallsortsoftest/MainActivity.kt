@@ -19,17 +19,18 @@ class MainActivity : AppCompatActivity() {
 
         var btn:Button=findViewById(R.id.btnSubmit)
         var btnView:Button=findViewById(R.id.btnView)
+        var btnSend:Button=findViewById(R.id.btnSend)
         var etFirst:EditText=findViewById(R.id.etFirstName)
         var etLast:EditText=findViewById(R.id.etLastName)
 
-    btnView.setOnClickListener {
+        btnSend.setOnClickListener {
         var intent=Intent(this,FormActivity::class.java)
         var msg="Firstname - ${etFirst.text} | Lastname - ${etLast.text}"
         intent.putExtra("value",msg)
         startActivity(intent)
     }
 
-        btn.setOnClickListener {
+        btnView.setOnClickListener {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW, Uri.parse(

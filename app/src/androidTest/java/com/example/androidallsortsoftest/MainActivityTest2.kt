@@ -3,6 +3,8 @@ package com.example.androidallsortsoftest
 import android.content.Intent
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
+import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.Intents.intended
@@ -42,8 +44,9 @@ class MainActivityTest2{
     @Test
     fun checkExpectedvalue(){
 
-        Espresso.onView(withId(R.id.etFirstName)).check(matches(withText("Shriti")))
-        Espresso.onView(withId(R.id.etLastName)).check(matches(withText("Devoy")))
+        Espresso.onView(withId(R.id.etFirstName)).perform(typeText("Shriti"))
+        Espresso.onView(withId(R.id.etLastName)).perform(typeText("Devoy"), closeSoftKeyboard())
+
         Espresso.onView(withId(R.id.btnSend)).perform(click())
 
        Espresso.onView(withId(R.id.tvResult)).check(matches(withText("Firstname - Shriti | Lastname - Devoy")))
