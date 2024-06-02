@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
          setContentView(R.layout.activity_main)
 
         var btn:Button=findViewById(R.id.btnSubmit)
+        var btnView:Button=findViewById(R.id.btnView)
+
+
+
         btn.setOnClickListener {
             startActivity(
                 Intent(

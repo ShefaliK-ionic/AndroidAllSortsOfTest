@@ -22,7 +22,7 @@ class MainActivityTest2{
 
     @Test
     fun testWithFieldFill(){
-        Espresso.onView(withId(R.id.btnSubmit)).perform(click())
+        Espresso.onView(withId(R.id.btnView)).perform(click())
         Espresso.onView(withId(R.id.etFirstName)).check(matches(withText("Shriti")))
 //        Espresso.onView(withId(R.id.btnSubmit)).perform(click())
     }
