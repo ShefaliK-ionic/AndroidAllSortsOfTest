@@ -15,6 +15,7 @@ import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 
+//todo Espresso test should add in androidTest pkg
 class MainActivityTest2{
 
     @get:Rule
@@ -36,7 +37,17 @@ class MainActivityTest2{
 
         intended(expected)
         Intents.release()
+    }
 
+    @Test
+    fun checkExpectedvalue(){
+
+        Espresso.onView(withId(R.id.etFirstName)).check(matches(withText("Shriti")))
+        Espresso.onView(withId(R.id.etLastName)).check(matches(withText("Devoy")))
+        Espresso.onView(withId(R.id.btnSend)).perform(click())
+
+       Espresso.onView(withId(R.id.tvResult)).check(matches(withText("Firstname - Shriti | Lastname - Devoy")))
 
     }
+
 }
