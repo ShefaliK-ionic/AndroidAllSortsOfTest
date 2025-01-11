@@ -76,4 +76,6 @@ dependencies {
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation ("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
    implementation("androidx.test.espresso:espresso-intents:3.6.0-rc01")
+    implementation("com.google.code.gson:gson:2.10.1")
+
 }

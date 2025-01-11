@@ -49,7 +49,7 @@ class MainActivityTest2{
 
         Espresso.onView(withId(R.id.btnSend)).perform(click())
 
-       Espresso.onView(withId(R.id.tvResult)).check(matches(withText("Firstname - Shriti | Lastname - Devoy")))
+        Espresso.onView(withId(R.id.tvResult)).check(matches(withText("Firstname - Shriti | Lastname - Devoy")))
 
     }
 
