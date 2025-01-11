@@ -34,4 +34,12 @@ class MyHelperTest {
 
     }
 
+    @Test
+    fun passwordValidate(){
+
+        val result=helper.validatePassword("1234567")
+        assertEquals(true,result)
+
+    }
+
 }

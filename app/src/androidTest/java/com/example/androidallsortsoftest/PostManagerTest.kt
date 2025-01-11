@@ -35,4 +35,8 @@ class PostManagerTest {
         postManager.populateDataFromAsset(context,"post.json")
         assertEquals(20,postManager.postList.size)
     }
+
+
+
+
 }

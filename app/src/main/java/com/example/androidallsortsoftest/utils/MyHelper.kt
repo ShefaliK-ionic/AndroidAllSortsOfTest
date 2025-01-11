@@ -28,4 +28,16 @@ class MyHelper {
     return match
     }
 
+
+
+    fun validatePassword(password:String):Boolean{
+
+        if(password.isNotBlank() && password.length>6 && password.length < 12){
+            return true
+        }else return false
+
+    }
+
 }
+
+
