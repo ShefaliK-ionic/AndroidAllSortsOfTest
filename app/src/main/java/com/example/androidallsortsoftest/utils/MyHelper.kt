@@ -1,5 +1,6 @@
 package com.example.androidallsortsoftest.utils
 
+import androidx.core.util.rangeTo
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -30,13 +31,30 @@ class MyHelper {
 
 
 
-    fun validatePassword(password:String):Boolean{
+    fun validatePassword(password:String)=
 
-        if(password.isNotBlank() && password.length>6 && password.length < 12){
-            return true
-        }else return false
+//        if(password.isNotBlank() && password.length>6 && password.length < 12){
+//            return true
+//        }else return false
 
-    }
+        when{
+            password.isBlank() ->"Password is required"
+            password.length< 6->"Should be more than 6"
+            password.length> 12->"Should be less than 12"
+            else->"valid"
+        }
+
+ fun reverseString(input: String):Boolean{
+     var rev=""
+     for (i in input.length-1 downTo 0){
+         rev+=input.get(i).toString()
+     }
+
+     if(rev.equals(input)){
+         return true
+     }else return false
+
+ }
 
 }
 

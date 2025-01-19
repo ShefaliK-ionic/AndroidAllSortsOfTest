@@ -2,10 +2,10 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ExampleInstrumentedTest">
+      <entry key="MainActivityTest2">
         <State />
       </entry>
-      <entry key="MainActivityTest2">
+      <entry key="QuotesDaoTest">
         <State />
       </entry>
       <entry key="app">
@@ -14,7 +14,7 @@
       <entry key="checkExpectedvalue()">
         <State />
       </entry>
-      <entry key="testWithFieldFill()">
+      <entry key="insertData()">
         <State />
       </entry>
     </value>

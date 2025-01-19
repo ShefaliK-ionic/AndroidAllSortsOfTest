@@ -35,9 +35,41 @@ class MyHelperTest {
     }
 
     @Test
-    fun passwordValidate(){
+    fun passwordValidateTrue(){
 
         val result=helper.validatePassword("1234567")
+        assertEquals("valid",result)
+
+    }
+
+    @Test
+    fun passwordValidateEmptyFalse(){
+
+        val result=helper.validatePassword("")
+        assertEquals("Password is required",result)
+
+    }
+
+    @Test
+    fun passwordValidateLess6False(){
+
+        val result=helper.validatePassword("12345")
+        assertEquals("Should be more than 6",result)
+
+    }
+
+    @Test
+    fun passwordValidateLess12False(){
+
+        val result=helper.validatePassword("1234567891012")
+        assertEquals("Should be less than 12",result)
+
+    }
+
+    @Test
+    fun reverseStrCheck(){
+
+        val result=helper.reverseString("123321")
         assertEquals(true,result)
 
     }

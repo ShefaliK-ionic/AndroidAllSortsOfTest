@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -77,5 +78,25 @@ dependencies {
     implementation ("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
    implementation("androidx.test.espresso:espresso-intents:3.6.0-rc01")
     implementation("com.google.code.gson:gson:2.10.1")
+    // optional - Test helpers
+    val room_version = "2.6.1"
+//    ksp("androidx.room:room-compiler:2.5.0")
+    implementation("androidx.room:room-runtime:$room_version")
+
+    // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
+    // See Add the KSP plugin to your project
+//    ksp("androidx.room:room-compiler:$room_version")
+
+    // If this project only uses Java source, use the Java annotationProcessor
+    // No additional plugins are necessary
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+
+    testImplementation("androidx.room:room-testing:$room_version")
+
+    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
 
 }
